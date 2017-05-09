@@ -17,6 +17,7 @@ Patches
 * **Toggle Fullscreen**
 * **Monocle Count**
 * **Move Resize**
+* **Scratchpad**
   
 Screenshot
 ----------------------------
