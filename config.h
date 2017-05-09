@@ -93,8 +93,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] 		     = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char scratchpadname[]  = "scratchy";
 static const char *dmenuCmd[] 	     = { "spawn_rofi", NULL };
 static const char *termCmd[] 	     = { "urxvt", NULL };
+static const char *scratchpadCmd[]   = { "urxvt", "-name", scratchpadname, "-geometry", "150x40", NULL };
 // Editors
 static const char *editorCmd[]     = { "urxvt", "-e", "vim", NULL };
 // Internet
@@ -119,6 +121,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_Return,					spawn,				{.v = termCmd } },
 	{ MODKEY,                       XK_c,                       spawn,              {.v = browserCmd } },
 	{ MODKEY,                       XK_e,                       spawn,              {.v = editorCmd } },
+	{ MODKEY,                       XK_x,                       togglescratch,      {.v = scratchpadCmd } },
 	{ MODKEY|ShiftMask,				XK_b,						togglebar,			{0} },
 	{ MODKEY,						XK_Right,					focusstack,			{.i = +1 } },
 	{ MODKEY,						XK_Left,					focusstack,			{.i = -1 } },
